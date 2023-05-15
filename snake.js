@@ -80,12 +80,12 @@ async function startPlaying() {
 async function movePosition(player, psum, num) {
   if (psum == "p1sum") {
     p1sum = p1sum + num;
-    p1sum = p1sum > 100 ? p1sum - num : p1sum;
+    p1sum = p1sum > 99 ? p1sum - num : p1sum;
     sum = p1sum;
   }
   if (psum == "p2sum") {
     p2sum = p2sum + num;
-    p2sum = p2sum > 100 ? p2sum - num : p2sum;
+    p2sum = p2sum > 99 ? p2sum - num : p2sum;
     sum = p2sum;
   }
   calculatePosition(player, sum);
@@ -119,7 +119,9 @@ function calculatePosition(player, sum) {
   if (scoreA == 99) {
     winSound.play();
     playerEl.style.left = `${eleSize / 2}px`;
+    // playerEl.style.top = `${-eleSize}px`;
     alert(`${player} winner  🎉 🎉 🎉 🎉 🎉 🎉`);
+    //location.reload();
     rolldice.removeEventListener("click", startPlaying);
   } else {
     let a = parseInt(scoreA / 10);
