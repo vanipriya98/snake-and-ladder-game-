@@ -116,7 +116,7 @@ function calculatePosition(player, sum) {
   let playerEl = document.getElementById(`${player}`);
   let scoreA = sum;
 
-  if (scoreA == 100) {
+  if (scoreA == 99) {
     winSound.play();
     playerEl.style.left = `${eleSize / 2}px`;
     alert(`${player} winner  🎉 🎉 🎉 🎉 🎉 🎉`);
@@ -132,7 +132,11 @@ function calculatePosition(player, sum) {
     } else {
       val2 = (9 - b) * eleSize;
     }
-    playerEl.style.left = `${val2}px`;
+    if (player == "person1") {
+      playerEl.style.left = `${val2}px`;
+    } else {
+      playerEl.style.left = `${val2 + 15}px`;
+    }
 
     return sum - 1;
   }
