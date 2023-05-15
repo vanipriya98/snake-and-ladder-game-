@@ -1,0 +1,36 @@
+.ladder {
+  position: relative;
+
+  border: 1px solid black;
+
+  background-image: url("snake.jpeg");
+
+  height: 85vh;
+
+  width: 90vw;
+  margin-left: 3%;
+  background-size: contain;
+
+  background-repeat: no-repeat;
+}
+
+#person1 {
+  position: absolute;
+  transition: all linear 1s;
+  left: -30px;
+  font-size: 26px;
+
+  color: red;
+}
+
+#person2 {
+  position: absolute;
+  transition: all linear 1s;
+  font-size: 26px;
+
+  left: -20px;
+  color: blue;
+}
+#rolldice {
+  margin-left: 15%;
+}
